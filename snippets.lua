@@ -23,10 +23,12 @@ module.register = function (self, syntax, snippets)
 		
 		self.snippets[syntax][k] = v
 	end
+
+	return true
 end
 
 local info = function (fmt, ...)
-	vis:info(string.format(fmt, table.unpack(...)))
+	vis:info("vis-snippets: " .. string.format(fmt, ...))
 end
 
 -- execute :snip with a key selected to replace it with it's snippet
